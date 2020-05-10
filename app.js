@@ -24,6 +24,7 @@ server = app.listen(PORT)
 
 //socket.io instantiation
 const io = require("socket.io")(server)
+//const io = socketIO(server);
 
 
 //listen on every connection

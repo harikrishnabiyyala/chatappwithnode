@@ -2,7 +2,7 @@ $(function(){
 
     var myUsername = "Anonymous"
     //make connection
-    var socket = io.connect(process.env.PORT)
+    var socket = io();  //.connect('http://localhost:3000')
 
     //buttons and inputs 
     var message = $("#message")
@@ -29,12 +29,15 @@ $(function(){
             $('#user').append("<h1>" + userList[i] + "</h1>"); 
         }
     });
-
+    console.log("ok upto here");
     //Emit message
     send_message.click(function(){
+        console.log("ok upto here socket send message");
+
         if (message.val()!=""){
         socket.emit('new_message', {message : message.val()})
         }
+        console.log("ok upto here socket send message");
     })
 
     //Listen on new_message
