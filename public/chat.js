@@ -29,15 +29,15 @@ $(function(){
             $('#user').append("<h1>" + userList[i] + "</h1>"); 
         }
     });
-    console.log("ok upto here");
+   
     //Emit message
     send_message.click(function(){
-        console.log("ok upto here socket send message");
 
         if (message.val()!=""){
         socket.emit('new_message', {message : message.val()})
         }
-        console.log("ok upto here socket send message");
+        $("#message").val("");
+    
     })
 
     //Listen on new_message
